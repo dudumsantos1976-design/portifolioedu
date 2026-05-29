@@ -312,6 +312,7 @@ section { position: relative; z-index: 1; }
   clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
 }
 
+
 .photo-placeholder::before {
   content: '';
   position: absolute;
