@@ -198,20 +198,20 @@ const projects = {
   },
   totvs: {
     title: 'Integração <span>ERP TOTVS</span>',
-    tags: ['TOTVS API', 'APIs REST', 'Banco de Dados', 'Integração de Sistemas', 'Backend'],
+    tags: ['Python', 'APIs', 'SQL', 'Integração de Sistemas', 'Backend'],
     imgAlt: 'Screenshot — Integração ERP TOTVS: sincronização de sistemas empresariais',
     sections: [
       {
         title: 'Visão Geral',
-        text: 'Integração corporativa entre sistemas empresariais utilizando o ecossistema TOTVS para sincronização e automação de processos administrativos. O projeto conectou módulos isolados em um fluxo unificado e confiável de dados.'
+        text: 'Atuação no desenvolvimento de automações internas e integrações de dados utilizando Python no VS Code e Google Colab, conectando APIs, bancos de dados SQL e processos corporativos para reduzir tarefas manuais e melhorar a eficiência operacional.'
       },
       {
         title: 'Funcionalidades',
-        text: 'Comunicação bidirecional entre APIs, sincronização de dados cadastrais e transacionais em tempo real, automação de rotinas operacionais que antes exigiam intervenção manual, e centralização de informações para tomada de decisão.'
+        text: 'Automação de rotinas administrativas, processamento e manipulação de dados, integração entre sistemas corporativos, consultas SQL para análise e sincronização de informações, além da geração de fluxos automatizados para otimização operacional.'
       },
       {
         title: 'Arquitetura & Confiabilidade',
-        text: 'Estrutura backend focada em confiabilidade e integridade referencial dos dados. Implementação de mecanismos de retry, log de erros e validação de payload para garantir que nenhuma transação seja perdida ou duplicada durante a sincronização entre sistemas.'
+        text: 'Estrutura desenvolvida com foco em automação backend, tratamento de dados e integração de sistemas. Utilização de Python para scripts e automações, SQL para consultas e manipulação de dados, APIs REST para comunicação entre plataformas e ambiente VS Code/Google Colab para desenvolvimento e testes.'
       }
     ]
   },
