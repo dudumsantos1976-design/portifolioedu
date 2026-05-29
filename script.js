@@ -9,7 +9,7 @@ const CONTACT_INFO = {
 const phrases = [
   'Engenharia da Computação',
   'Desenvolvedor IoT & Sistemas Embarcados',
-  'Automação'
+  'Automação e Dados'
 ];
 let pi = 0, ci = 0, deleting = false;
 const el = document.getElementById('typing-text');
@@ -46,6 +46,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 const projects = {
   forklift: {
     title: '<span>ForkLift</span> Control',
+    image: 'images/empilhadeira.pc.jpg',
     tags: ['ESP32', 'LoRa SX1278', 'MQTT', 'HiveMQ Cloud', 'TypeScript', 'Supabase'],
     imgAlt: 'Screenshot — ForkLift Control: painel de autorização de empilhadeiras',
     sections: [
@@ -65,6 +66,7 @@ const projects = {
   },
   securemall: {
     title: '<span>Secure</span>Mall',
+    image: 'images/secure.pc.png',
     tags: ['Raspberry Pi 4', 'Python', 'DeepFace', 'OpenCV', 'Flask API', 'SQLite', 'LGPD'],
     imgAlt: 'Screenshot — SecureMall: interface de reconhecimento facial e gestão de acessos',
     sections: [
@@ -84,6 +86,7 @@ const projects = {
   },
   triagem: {
     title: 'Triagem de <span>Cargas</span>',
+    image: 'images/cargas.pc.jpg',
     tags: ['Arduino Uno', 'C++', 'USB Host Shield', 'HID Protocol', 'I2C', 'LCD 16x2', 'Bematech BR-400'],
     imgAlt: 'Screenshot — Sistema de Triagem: leitura de código de barras e exibição no display LCD',
     sections: [
@@ -103,6 +106,7 @@ const projects = {
   },
   brassagem: {
     title: 'Automação de <span>Brassagem</span>',
+    image: 'images/cerveja.pc.png',
     tags: ['Arduino Uno', 'C++', 'DS18B20', 'Relé 4 Canais', 'Histerese', '220V'],
     imgAlt: 'Screenshot — Automação de Brassagem: gráfico de temperatura e rampas enzimáticas',
     sections: [
@@ -115,6 +119,10 @@ const projects = {
         text: 'Arduino Uno atua como controlador central. O sensor de temperatura DS18B20 à prova d\'água monitora continuamente a temperatura do mosto líquido via protocolo 1-Wire. O módulo relé de 4 canais gerencia o acionamento do fogão elétrico de alta potência (220V/5500W).'
       },
       {
+        title: 'Software',
+        text: 'Software desenvolvido em Bubble.io com o propósito de conectar consumidores e produtores, permitindo a divulgação, busca e comercialização de cervejas artesanais em uma única plataforma..'
+      },  
+      {
         title: 'Lógica de Controle',
         text: 'Algoritmo em C++ com leitura analógica/digital e lógica de histerese configurável. O sistema liga o elemento aquecedor quando a temperatura cai X°C abaixo do alvo e desliga quando ultrapassa Y°C acima, evitando ciclos rápidos de liga/desliga que degradam o relé. As rampas enzimáticas (beta-glucanase, proteólise, sacarificação) são programadas em sequência com temporizador.'
       }
@@ -122,6 +130,7 @@ const projects = {
   },
   abcomm: {
     title: 'Prêmio <span>Abcomm</span> 2025',
+    image: 'images/premio.mobile.png',
     tags: ['Bubble.io', 'APIs REST', 'Banco de Dados Relacional', 'UX/UI Responsivo', 'Autenticação'],
     imgAlt: 'Screenshot — Prêmio Abcomm 2025: plataforma de votação e premiação digital',
     sections: [
@@ -141,6 +150,7 @@ const projects = {
   },
   abconecta: {
     title: 'ABConecta <span>Jobs</span>',
+    image: 'images/portal.mobile.png',
     tags: ['Bubble.io', 'APIs REST', 'JavaScript', 'Banco de Dados Relacional', 'Multiusuário'],
     imgAlt: 'Screenshot — ABConecta Jobs: portal de vagas e gestão de candidaturas',
     sections: [
@@ -160,6 +170,7 @@ const projects = {
   },
   yolo: {
     title: 'Contador de <span>Colônias</span> YOLOv8',
+    image: 'images/colonias.pc.png',
     tags: ['YOLOv8', 'Python', 'OpenCV', 'Deep Learning', 'Visão Computacional'],
     imgAlt: 'Screenshot — Contador de Colônias: detecção e contagem automatizada via IA',
     sections: [
@@ -179,6 +190,7 @@ const projects = {
   },
   certificados: {
     title: 'Automação de <span>Certificados</span>',
+    image: 'images/make.jpeg',
     tags: ['Make (Integromat)', 'Google Sheets', 'APIs REST', 'No-Code', 'Integração'],
     imgAlt: 'Screenshot — Automação de Certificados: fluxo de geração e distribuição automática',
     sections: [
@@ -198,6 +210,7 @@ const projects = {
   },
   totvs: {
     title: 'Integração <span>ERP TOTVS</span>',
+    image: 'images/automacao.avif',
     tags: ['Python', 'APIs', 'SQL', 'Integração de Sistemas', 'Backend'],
     imgAlt: 'Screenshot — Integração ERP TOTVS: sincronização de sistemas empresariais',
     sections: [
@@ -217,6 +230,7 @@ const projects = {
   },
   ajudaai: {
     title: '<span>AJUDAAI</span> — Plataforma Social',
+    image: 'images/ajudaai.pc.jpg',
     tags: ['Bubble.io', 'APIs REST', 'Banco de Dados Relacional', 'UX/UI', 'Mobile-First'],
     imgAlt: 'Screenshot — AJUDAAI: plataforma de descoberta e divulgação de ONGs',
     sections: [
@@ -241,10 +255,7 @@ function openModal(key) {
   document.getElementById('modal-title').innerHTML = p.title;
   document.getElementById('modal-body').innerHTML = `
     <div class="modal-img">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" width="48" height="48">
-        <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
-      </svg>
-      <span class="modal-img-label">${p.imgAlt}</span>
+    <img src="${p.image}" alt="${p.imgAlt}">
     </div>
     <div class="modal-section">
       <div class="modal-section-title">Tecnologias</div>
