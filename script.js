@@ -7,9 +7,9 @@ const CONTACT_INFO = {
 
 // TYPING EFFECT
 const phrases = [
-  'Engenheiro da Computação',
+  'Engenharia da Computação',
   'Desenvolvedor IoT & Sistemas Embarcados',
-  'Especialista em Automação'
+  'Automação'
 ];
 let pi = 0, ci = 0, deleting = false;
 const el = document.getElementById('typing-text');
